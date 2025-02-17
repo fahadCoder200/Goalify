@@ -1,13 +1,16 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import SignIn from "../utils/signInRequester";
 import LogIn from "../utils/logInRequester";
 import CheckUserAuth from "../utils/checkUserAuth";
 import LogOut from "../utils/logOutRequester";
+import { NavigateContext } from "./NavigationStore";
 
 export const UserSigned = createContext();
 
-function UserSignedProvider({ children, navigate }) {
+function UserSignedProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
+
+  const navigate = useContext(NavigateContext);
 
   const checkAuth = async () => {
     try {

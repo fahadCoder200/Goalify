@@ -22,7 +22,8 @@ function NavBar(){
                 margin="10px"
                 display="flex"
                 gap="5px"
-                borderRadius="6px">
+                borderRadius="6px"
+                key={option.title}>
                     <Image width="20px" fill="white" src={option.img_src}/>
                     <Text>{option.title}</Text>
                 </ListItem>
