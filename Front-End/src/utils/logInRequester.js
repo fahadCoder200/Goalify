@@ -9,6 +9,8 @@ async function LogIn(username, password) {
         { withCredentials: true }
         );
 
+        console.log(response.data);
+        
         return response.data;
     } 
     catch (error) {

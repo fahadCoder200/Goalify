@@ -41,7 +41,7 @@ loginRouter.post("/login", async (req, res)=>{
                 maxAge: 7 * 24 * 60 * 60 * 1000
             })
 
-            res.status(200).json({message: "Succesfull"});
+            res.status(200).json({username: findUser.username, ID: findUser._id});
 
             return true;
         }

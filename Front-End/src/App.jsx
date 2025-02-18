@@ -7,6 +7,7 @@ import DashboardLayout from "./Layouts/DashboardLayout.jsx";
 import NavigationProvider from "./store/NavigationStore.jsx";
 import ProjectContextProvider from "./store/TaskStore.jsx";
 import CreateTaskLayout from "./Layouts/CreateTaskLayout.jsx";
+import TasksPage from "./pages/TasksPage.jsx";
 
 const AuthRoute = ({ children }) => {
   const { isAuthenticated } = useContext(UserSigned);
@@ -41,6 +42,10 @@ function App() {
                     <SignInLayout />
                   </SafetyRoute>
                 }
+              />
+              <Route
+              path="/Tasks"
+              element={<TasksPage/>}
               />
               <Route
                 path="/login"

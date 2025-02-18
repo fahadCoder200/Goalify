@@ -44,7 +44,7 @@ function UserSignedProvider({ children }) {
   async function logIn(username, password) {
     const logUser = await LogIn(username, password);
     if(logUser !== 1){
-      setIsAuthenticated(logUser.user);
+      setIsAuthenticated(logUser);
       navigate("/");
       return 0;
     }
