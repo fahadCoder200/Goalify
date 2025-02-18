@@ -9,7 +9,7 @@ async function LogIn(username, password) {
         { withCredentials: true }
         );
 
-        return 0;
+        return response.data;
     } 
     catch (error) {
         console.log("Invalid Credentials");

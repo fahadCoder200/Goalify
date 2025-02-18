@@ -6,9 +6,7 @@ async function CheckUserAuth() {
             "http://localhost:3000/checkAuth",
             {},
             { withCredentials: true }
-          );
-
-        console.log(response.data);  
+          ); 
 
         return response.data;
 

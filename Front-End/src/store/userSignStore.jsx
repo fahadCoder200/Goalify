@@ -17,7 +17,7 @@ function UserSignedProvider({ children }) {
       const userStatus = await CheckUserAuth();
 
       if (userStatus.isAuthenticated) {
-        setIsAuthenticated(userStatus.user.username);
+        setIsAuthenticated(userStatus.user);
       } else {
         console.log("User not authenticated. Redirecting to login...");
         navigate("/login");
@@ -36,15 +36,15 @@ function UserSignedProvider({ children }) {
     if (signUser === 1) {
       console.log("ERROR");
     } else if (signUser) {
-      setIsAuthenticated(username);
+      setIsAuthenticated(signUser.user);
       navigate("/");
     }
   }
 
   async function logIn(username, password) {
     const logUser = await LogIn(username, password);
-    if(logUser === 0){
-      setIsAuthenticated(username);
+    if(logUser !== 1){
+      setIsAuthenticated(logUser.user);
       navigate("/");
       return 0;
     }

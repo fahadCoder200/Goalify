@@ -16,7 +16,7 @@ function LogInPage(){
     
       const onSubmit = async (data) => {
         const isLogged = await logIn(data.username, data.password);
-        if (isLogged === 0) {
+        if (isLogged !== 1) {
           toast.success("Login Successful", { autoClose: 2000 });
         } else {
           toast.error("Invalid Username or Password", { autoClose: 2000 });

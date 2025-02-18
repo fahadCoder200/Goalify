@@ -7,6 +7,7 @@ import loginRouter from "./routers/userAuthRouters/loginRouter.js";
 import signUpRouter from "./routers/userAuthRouters/signUpRouter.js";
 import UserAuthRouter from "./routers/userAuthRouters/checkUserAuthRouter.js"
 import RefreshRouter from "./routers/userAuthRouters/refreshRouter.js";
+import TaskRouter from "./routers/TaskRouters/TaskRouter.js";
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use(RefreshRouter);
 app.use(UserAuthRouter);
 app.use(loginRouter);
 app.use(signUpRouter);
+app.use(TaskRouter);
 
 mongoose.connect(process.env.DB_URI)
     .then(()=> console.log("Connected to Mongoose"))
