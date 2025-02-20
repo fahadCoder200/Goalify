@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(RefreshRouter);
 app.use(UserAuthRouter);
 app.use(loginRouter);
-app.use(signUpRouter);
+app.use(signUpRouter); 
 app.use(TaskRouter);
 
 mongoose.connect(process.env.DB_URI)

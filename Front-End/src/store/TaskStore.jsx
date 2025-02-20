@@ -37,6 +37,10 @@ function ProjectContextProvider({children}){
       return 0;
     }
 
+    async function FuncForEffect(){
+        await onGetTaskRequester();
+    }
+
     async function onTaskRequester(data){
         const {taskName, taskDesc, taskStatus, taskPriority, taskDueDate} = data;
         const {userID} = isAuthenticated;
@@ -59,7 +63,7 @@ function ProjectContextProvider({children}){
         }
     }
 
-    return <ProjectContext.Provider value={{navigate, onTaskRequester, onGetTaskRequester, tasks}}>
+    return <ProjectContext.Provider value={{navigate, onTaskRequester, onGetTaskRequester, FuncForEffect, tasks}}>
         {children}
     </ProjectContext.Provider>
 }
